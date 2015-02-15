@@ -1,12 +1,12 @@
 Rails.application.routes.draw do
   
-  get 'site/index'
+  root to: 'site#index'
 
-  get 'site/contact'
-
-  get 'site/about'
+  get '/contact', to: 'site#contact'
+  get '/about', to: 'site#about'
 
   devise_for :users
-  root to: 'site#index'
+
+  get '/messages', to: 'messages#index'
   
 end
