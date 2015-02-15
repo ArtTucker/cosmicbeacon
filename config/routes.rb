@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
   
+  get 'planets/index'
+
+  get 'planets/show'
+
   root to: 'site#index'
 
   get '/contact', to: 'site#contact'
