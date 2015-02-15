@@ -9,5 +9,6 @@ Rails.application.routes.draw do
 
   get '/messages', to: 'messages#index'
   get '/messages/new', to: 'messages#new'
+  post '/messages', to: 'messages#create'
   
 end
