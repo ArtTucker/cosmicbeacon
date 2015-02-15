@@ -1,0 +1,11 @@
+<div class="container1">
+
+    <div>
+        Content: <%= @message.content %> <br>
+        Target System: <%=  @message.planet_id %> <br>
+        Composed by: <%= @message.user_id %> <br>
+        Sent At: <%= @message.created_at %><br>
+        Delivered By: (sent_at + distance_in_ly)
+    </div>
+
+</div>

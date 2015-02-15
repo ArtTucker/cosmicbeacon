@@ -15,4 +15,10 @@ class MessagesController < ApplicationController
 		message = Message.create(new_message)		
 		redirect_to '/messages/#{message.id}'
 	end
+
+	def show
+		id = params[:id]
+		@message = Message.find(id)		
+		render :show
+	end
 end
