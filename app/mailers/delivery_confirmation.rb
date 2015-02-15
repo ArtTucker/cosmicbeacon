@@ -1,0 +1,2 @@
+class DeliveryConfirmation < ApplicationMailer
+end
