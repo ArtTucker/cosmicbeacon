@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  content: MyString
+  user_id: MyString
+  planet_id: MyString
+  created_at: 2015-02-14 18:06:03
+
+two:
+  content: MyString
+  user_id: MyString
+  planet_id: MyString
+  created_at: 2015-02-14 18:06:03
