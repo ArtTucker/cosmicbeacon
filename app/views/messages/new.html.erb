@@ -1,0 +1,13 @@
+<div class="container1">
+	<h1>Compose a message</h1>
+
+
+	<%= form_for :message, url: "/messages", method: "post" do |f| %>
+
+	    Message: <%= f.text_field :content %>
+	    Target System: <%= f.text_field :planet_id %> 
+	    <%= f.submit "Send Message" %>
+
+	<% end %>
+
+</div>

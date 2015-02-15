@@ -8,5 +8,6 @@ Rails.application.routes.draw do
   devise_for :users
 
   get '/messages', to: 'messages#index'
+  get '/messages/new', 'messages#new'
   
 end
