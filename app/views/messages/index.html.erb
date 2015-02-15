@@ -1,0 +1,18 @@
+<div class="container1">
+	
+<h1>Here will be the index of messages.</h1>
+
+<% @messages.each do |message| %>
+
+    <div>
+        Message: <%= message.content %> <br>
+        Target: <%=  message.planet_id %><br>
+        Composed by: <%= message.user_id %><br>
+        Created At: <%=  message.created_at %><br>
+        Delivered by: (created_at + distance_in_ly)
+    </div>
+
+<% end %>
+
+
+</div>
