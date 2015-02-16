@@ -1,9 +1,5 @@
 Rails.application.routes.draw do
   
-  get 'planets/index'
-
-  get 'planets/show'
-
   root to: 'site#index'
 
   get '/contact', to: 'site#contact'
@@ -16,4 +12,7 @@ Rails.application.routes.draw do
   get '/messages/:id', to: 'messages#show'
   post '/messages', to: 'messages#create'
   
+  get '/planets', to: 'planets#index'
+  get '/planets/show', to: 'planets#show'
+
 end
