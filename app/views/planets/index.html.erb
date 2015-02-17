@@ -17,12 +17,12 @@
 
 		<% @planets.each do |planet| %>
 			<tr>
-				<td><%= planet.name %></td>
-				<td><%= planet.star %></td>
-				<td><%= planet.distance %></td>
-				<td><%= planet.temp %></td>
-				<td><%= planet.mass %></td>
-				<td><%= planet.link %></td>
+				<td><%= planet[:name] %></td>
+				<td><%= planet[:star] %></td>
+				<td><%= planet[:distance] %></td>
+				<td><%= planet[:temp] %></td>
+				<td><%= planet[:mass] %></td>
+				<td><%= planet[:link] %></td>
 				<td><%= link_to 'Send Message' %></td>
 			</tr>
 		<% end %>
