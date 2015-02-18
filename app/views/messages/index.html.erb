@@ -1,6 +1,6 @@
 <div>
 
-<h1>Here will be the index of messages.</h1>
+<h1>Messages Sent</h1>
 
 <table class="table">
 	<tr>
@@ -13,10 +13,10 @@
 
 	<% @messages.each do |message| %>
 	<tr>
-		<td><%=  message.planet_id %></td>
+		<td><%= message.planet_id, :value => @planet[:name] %></td>
 		<td><%= message.content %></td>
 		<td><%= message.user_id %></td>
-		<td><%=  message.created_at %></td>
+		<td><%= message.created_at %></td>
 		<td>(created_at + distance_in_ly)</td>
 	</tr>
 	<% end %>

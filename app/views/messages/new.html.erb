@@ -4,9 +4,15 @@
 
 	<%= form_for :message, url: "/messages", method: "post" do |f| %>
 
-	    Target System: <%= @planet[:name]  %> <br>
+		<%= f.hidden_field :planet_id, :value => @planet[:id] %>
+	    Target System: <%= @planet[:name] %> <br>
 	    Estimated Delivery: <%= @planet[:distance] %> years <br>
 	    Message: <%= f.text_area :content %> <br>
+	    <br>
+	    <div class="caution">
+	    	<p>Caution: All messages sent through Cosmic Beacon to targeted exoplanetary systems are delivered at light-speed, via high-frequency radio transmissions, and are irrevocable. Before sending any message, please consider the impression you may make upon any listening, sentient species, on behalf of the entire planet Earth.</p>
+	    </div>
+	    
 	    <%= f.submit "Send Message" %>
 
 	<% end %>

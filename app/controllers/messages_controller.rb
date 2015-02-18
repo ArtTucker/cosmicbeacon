@@ -2,6 +2,7 @@ class MessagesController < ApplicationController
 
 	def index
 		@messages = Message.all
+
 		render :index
 	end
 
@@ -15,7 +16,7 @@ class MessagesController < ApplicationController
 	def create
 		new_message = params.require(:message).permit(:content, :user_id, :planet_id)
 		message = Message.create(new_message)		
-		redirect_to '/messages/#{message.id}'
+		redirect_to '/messages'
 	end
 
 	def show
