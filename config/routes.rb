@@ -15,4 +15,10 @@ Rails.application.routes.draw do
   get '/planets', to: 'planets#index'
   get '/planets/show', to: 'planets#show'
 
+  resources :planets do
+    resources :messages
+  end
+
 end
+
+

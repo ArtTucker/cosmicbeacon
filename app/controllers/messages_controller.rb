@@ -6,7 +6,9 @@ class MessagesController < ApplicationController
 	end
 
 	def new
+		@planet = Planet.find(params[:planet_id])
 		@message = Message.new
+
 		render :new
 	end
 

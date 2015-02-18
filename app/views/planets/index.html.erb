@@ -2,14 +2,14 @@
 
 	<h1>Planets index</h1>
 
-	<h3>A filtered list of exoplanets within 150 light years of earth.</h3>
+	<h3>A filtered list of exoplanets, with known distances, within 150 light years of earth.</h3>
 
 	<table class="table">
 		<tr>
 			<th>Planet Name</th>
 			<th>Host Star</th>
 			<th>Distance (ly)</th>
-			<th>Avg. Planet Temp</th>
+			<th>Average Planet Temp (C)</th>
 			<th>Planet Mass (Earth Masses)</th>
 			<th>More Planet Info</th>
 			<th colspan="1"></th>
@@ -20,10 +20,24 @@
 				<td><%= planet[:name] %></td>
 				<td><%= planet[:star] %></td>
 				<td><%= planet[:distance] %></td>
-				<td><%= planet[:temp] %></td>
-				<td><%= planet[:mass] %></td>
-				<td><%= planet[:link] %></td>
-				<td><%= link_to 'Send Message' %></td>
+  
+				<td> 
+					<% if (planet[:temp]!=nil) %>
+						<%= (planet[:temp].to_f-273.15).round(2) %>
+					<% end %>
+				</td>
+				
+				<td>
+					<% if (planet[:mass]!=nil) %>
+						<%= (planet[:mass].to_f).round(2) %>
+					<% end %>
+				</td>
+				<td>
+					<% if (planet[:link]!=nil) %>
+						<a href="<%= planet[:link] %>">More Info</a>
+					<% end %>
+				</td>
+				<td><%= link_to 'Send Message', new_planet_message_path(planet[:planet_id]) %></td>
 			</tr>
 		<% end %>
 

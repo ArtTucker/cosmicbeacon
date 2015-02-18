@@ -4,8 +4,9 @@
 
 	<%= form_for :message, url: "/messages", method: "post" do |f| %>
 
-	    Message: <%= f.text_field :content %> <br>
-	    Target System: <%= f.text_field :planet_id %> <br>
+	    Target System: <%= @planet[:name]  %> <br>
+	    Estimated Delivery: <%= @planet[:distance] %> years <br>
+	    Message: <%= f.text_area :content %> <br>
 	    <%= f.submit "Send Message" %>
 
 	<% end %>
