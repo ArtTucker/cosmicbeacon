@@ -1,0 +1,20 @@
+base URL:
+http://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?
+
+Table selection:
+table=exoplanets
+
+Column selections:
+&select=pl_name,pl_eqt,pl_masse,st_dist,pl_hostname,pl_edelink
+
+Filter:
+&where=st_dist<46
+
+Ordering by:
+&order=st_dist
+
+Format:
+&format=xml
+
+Complete query:
+http://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?table=exoplanets&select=pl_name,pl_eqt,pl_masse,st_dist,pl_hostname,pl_edelink&where=st_dist<46&order=st_dist&format=xml

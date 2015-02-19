@@ -27,8 +27,8 @@ class MessagesController < ApplicationController
 		render :show
 	end
 
-	require 'time'
-	def years_since(years)
-		advance(:years => years)
-	end
+	# require 'time'
+	# def years_since(years)
+	# 	advance(:years => years)
+	# end
 end

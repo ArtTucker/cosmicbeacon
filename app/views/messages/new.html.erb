@@ -10,8 +10,12 @@
 	    Estimated Delivery: <%= @planet[:distance] %> years <%= f.hidden_field :distance, :value => @planet[:distance] %> <br>
 	    Message: <%= f.text_area :content %> <br>
 	    <br>
-	    <div class="caution">
-	    	<p>Caution: All messages sent through Cosmic Beacon to targeted exoplanetary systems are delivered at light-speed, via high-frequency radio transmissions, and are irrevocable. Before sending any message, please consider the impression you may make upon any listening, sentient species, on behalf of the entire planet Earth.</p>
+	    <div class="panel panel-danger">
+	    	<div class="panel-heading">Caution</div>
+	    	<div class="panel-body">
+	    		<p>All messages sent through Cosmic Beacon to targeted exoplanetary systems are delivered at light-speed, via high-frequency radio transmissions, and are irrevocable. Before sending any message, please consider the impression you may make upon any listening, sentient species, on behalf of the entire planet Earth.</p>
+	    	</div>
+	    	
 	    </div>
 	    
 	    <%= f.submit "Send Message" %>

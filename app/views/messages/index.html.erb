@@ -1,26 +1,29 @@
-<div>
+<div class="panel panel-primary">
+	<div class="panel-heading">
+		<h1>Messages Sent</h1>
+	</div>
+	<div class="panel-body">
+	</div>
 
-<h1>Messages Sent</h1>
+	<table class="table table-striped">
+		<tr>
+			<th>Target Planet</th>
+			<th>Message</th>
+			<th>Composed by</th>
+			<th>Time sent</th>
+			<th>Expected delivery</th>
+		</tr>
 
-<table class="table">
-	<tr>
-		<th>Target Planet</th>
-		<th>Message</th>
-		<th>Composed by</th>
-		<th>Time sent</th>
-		<th>Expected delivery</th>
-	</tr>
+		<% @messages.each do |message| %>
+		<tr>
+			<td><%= message.planet_id %></td>
+			<td><%= message.content %></td>
+			<td><%= message.user_id %></td>
+			<td><%= message.created_at %></td>
+			<td>[created_at + distance in ly]</td>
+		</tr>
+		<% end %>
 
-	<% @messages.each do |message| %>
-	<tr>
-		<td><%= message.planet_id %></td>
-		<td><%= message.content %></td>
-		<td><%= message.user_id %></td>
-		<td><%= message.created_at %></td>
-		<td>(created_at + distance_in_ly)</td>
-	</tr>
-	<% end %>
-
-</table>
+	</table>
 
 </div>
