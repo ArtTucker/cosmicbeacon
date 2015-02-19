@@ -8,11 +8,11 @@
 	
 	<table class="table table-striped table-condensed">
 		<tr>
-			<th>Planet Name</th>
-			<th>Host Star</th>
-			<th>Distance (ly)</th>
-			<th>Average Planet Temp (C)</th>
-			<th>Planet Mass (Earth Masses)</th>
+			<th class="col-md-3">Planet Name</th>
+			<th class="col-md-3">Host Star</th>
+			<th class="col-md-1">Distance (ly)</th>
+			<th class="col-md-1">Average Planet Temp (C)</th>
+			<th class="col-md-1">Planet Mass (Earth Masses)</th>
 			<th colspan="2"></th>
 		</tr>
 
@@ -35,7 +35,7 @@
 				</td>
 				<td>
 					<% if (planet[:link]!=nil) %>
-						<a href="<%= planet[:link] %>">More Info</a>
+						<a href="<%= planet[:link] %>" target="_blank">More Info</a>
 					<% end %>
 				</td>
 				<td><%= link_to 'Send Message', new_planet_message_path(planet[:planet_id]) %></td>
