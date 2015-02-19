@@ -1,5 +1,7 @@
 class MessagesController < ApplicationController
 
+	before_action :authenticate_user!
+
 	def index
 		@messages = Message.all
 
@@ -23,5 +25,10 @@ class MessagesController < ApplicationController
 		id = params[:id]
 		@message = Message.find(id)		
 		render :show
+	end
+
+	require 'time'
+	def years_since(years)
+		advance(:years => years)
 	end
 end

@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
 		devise_parameter_sanitizer.for(:sign_up) << :username
 	end
 
-	def after_sign_in_path_for(resource)
-    	redirect_to '/planets'
-  	end
+	# def after_sign_in_path_for(user)
+ #    	redirect_to '/'
+ #  	end
 end
