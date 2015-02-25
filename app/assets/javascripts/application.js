@@ -17,23 +17,23 @@
 
 
 
-// Table width script...
-// Change the selector if needed
-var $table = $('table'),
-    $bodyCells = $table.find('tbody tr:first').children(),
-    colWidth;
+// // Table width script...
+// // Change the selector if needed
+// var $table = $('table'),
+//     $bodyCells = $table.find('tbody tr:first').children(),
+//     colWidth;
 
-// Get the tbody columns width array
-colWidth = $bodyCells.map(function() {
-    return $(this).width();
-}).get();
+// // Get the tbody columns width array
+// colWidth = $bodyCells.map(function() {
+//     return $(this).width();
+// }).get();
 
-// Set the width of thead columns
-$table.find('thead tr').children().each(function(i, v) {
-    $(v).width(colWidth[i]);
-});
+// // Set the width of thead columns
+// $table.find('thead tr').children().each(function(i, v) {
+//     $(v).width(colWidth[i]);
+// });
 
-// Adjust the width of thead cells when *window* resizes
-$(window).resize(function() {
-    /* Same as before */ 
-}).resize(); // Trigger the resize handler once the script runs
+// // Adjust the width of thead cells when *window* resizes
+// $(window).resize(function() {
+//     /* Same as before */ 
+// }).resize(); // Trigger the resize handler once the script runs

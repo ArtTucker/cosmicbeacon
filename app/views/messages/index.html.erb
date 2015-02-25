@@ -6,23 +6,28 @@
 	</div>
 
 	<table class="table table-striped">
-		<tr>
-			<th class="col-md-2">Target Planet</th>
-			<th class="col-md-4">Message</th>
-			<th class="col-md-1">Composed by</th>
-			<th class="col-md-3">Time sent</th>
-			<th class="col-md-3">Expected delivery</th>
-		</tr>
+		<thead>
+			<tr>
+				<th >Target Planet</th>
+				<th >Message</th>
+				<th >Composed by</th>
+				<th >Time sent</th>
+				<th >Expected delivery</th>
+			</tr>
+		</thead>
+		
+		<tbody>
+			<% @messages.each do |message| %>
+			<tr>
+				<td><%= message.planet_id %></td>
+				<td><%= message.content %></td>
+				<td><%= message.user_id %></td>
+				<td><%= message.created_at %></td>
+				<td>[created_at + distance in ly]</td>
+			</tr>
+			<% end %>
+		</tbody>
 
-		<% @messages.each do |message| %>
-		<tr>
-			<td><%= message.planet_id %></td>
-			<td><%= message.content %></td>
-			<td><%= message.user_id %></td>
-			<td><%= message.created_at %></td>
-			<td>[created_at + distance in ly]</td>
-		</tr>
-		<% end %>
 
 	</table>
 

@@ -1,14 +1,19 @@
 <div >
-	<h1>Compose a message</h1>
+	<h1 class="yellowtext">Compose a message</h1>
 
 
 	<%= form_for :message, url: "/messages", method: "post" do |f| %>
 
 		<%= f.hidden_field :planet_id, :value => @planet[:name] %>
+		<div class="yellowtext">
+
+
 		From: <%= current_user.username %> <%= f.hidden_field :user_id, :value => current_user.username %> <br>
 	    Target System: <%= @planet[:name] %> <br>
 	    Estimated Delivery: <%= @planet[:distance] %> years <%= f.hidden_field :distance, :value => @planet[:distance] %> <br>
-	    Message: <%= f.text_area :content %> <br>
+	    Message:
+	    </div>
+	    <%= f.text_area :content, :size => "30x5" %> <br>
 	    <br>
 	    <div class="panel panel-danger">
 	    	<div class="panel-heading">Caution</div>
