@@ -39,3 +39,19 @@ body {
 .yellowtext {
 	color: #FFFFCC;
 }
+
+table {
+	width: 100%;
+}
+
+thead, tbody { display: block;}
+
+tbody td, thead th {
+	width: 20%;
+}
+
+tbody {
+	height: 350px;
+	overflow-y: auto;
+	overflow-x: hidden;
+}

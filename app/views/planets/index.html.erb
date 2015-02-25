@@ -7,41 +7,46 @@
 	</div>
 	
 	<table class="table table-striped table-condensed">
-		<tr>
-			<th class="col-md-3">Planet Name</th>
-			<th class="col-md-3">Host Star</th>
-			<th class="col-md-1">Distance (ly)</th>
-			<th class="col-md-1">Average Planet Temp (C)</th>
-			<th class="col-md-1">Planet Mass (Earth Masses)</th>
-			<th colspan="2"></th>
-		</tr>
-
-		<% @planets.each do |planet| %>
+		<thead>
 			<tr>
-				<td><%= planet[:name] %></td>
-				<td><%= planet[:star] %></td>
-				<td><%= planet[:distance] %></td>
-  
-				<td> 
-					<% if (planet[:temp]!=nil) %>
-						<%= (planet[:temp].to_f-273.15).round(2) %>
-					<% end %>
-				</td>
-				
-				<td>
-					<% if (planet[:mass]!=nil) %>
-						<%= (planet[:mass].to_f).round(2) %>
-					<% end %>
-				</td>
-				<td>
-					<% if (planet[:link]!=nil) %>
-						<a href="<%= planet[:link] %>" target="_blank">More Info</a>
-					<% end %>
-				</td>
-				<td><%= link_to 'Send Message', new_planet_message_path(planet[:planet_id]) %></td>
-			</tr>
-		<% end %>
+				<th >Planet Name</th>
+				<th >Host Star</th>
+				<th >Distance (ly)</th>
+				<th >Average Planet Temp (C)</th>
+				<th >Planet Mass (Earth Masses)</th>
+				<th colspan="2">Exoplanet Info</th>
+				<th></th>
 
+			</tr>
+		</thead>
+
+		<tbody>
+			<% @planets.each do |planet| %>
+				<tr>
+					<td><%= planet[:name] %></td>
+					<td><%= planet[:star] %></td>
+					<td><%= planet[:distance] %></td>
+	  
+					<td> 
+						<% if (planet[:temp]!=nil) %>
+							<%= (planet[:temp].to_f-273.15).round(2) %>
+						<% end %>
+					</td>
+					
+					<td>
+						<% if (planet[:mass]!=nil) %>
+							<%= (planet[:mass].to_f).round(2) %>
+						<% end %>
+					</td>
+					<td>
+						<% if (planet[:link]!=nil) %>
+							<a href="<%= planet[:link] %>" target="_blank">More Info</a>
+						<% end %>
+					</td>
+					<td><%= link_to 'Send Message', new_planet_message_path(planet[:planet_id]) %></td>
+				</tr>
+			<% end %>
+		</tbody>
 
 	</table>
 
