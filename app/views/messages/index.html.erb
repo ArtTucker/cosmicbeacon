@@ -5,13 +5,13 @@
 	<div class="panel-body">
 	</div>
 
-	<table class="table table-striped">
+	<table class="table table-striped table-condensed">
 		<thead>
 			<tr>
 				<th >Target Planet</th>
 				<th >Message</th>
 				<th >Composed by</th>
-				<th >Time sent</th>
+				<th >Time sent (UTC)</th>
 				<th >Expected delivery</th>
 			</tr>
 		</thead>
@@ -19,11 +19,11 @@
 		<tbody>
 			<% @messages.each do |message| %>
 			<tr>
-				<td><%= message.planet_id %></td>
+				<td><%= message.planet[:name] %></td>
 				<td><%= message.content %></td>
 				<td><%= message.user_id %></td>
-				<td><%= message.created_at %></td>
-				<td>[created_at + distance in ly]</td>
+				<td><%= message.created_at.to_formatted_s(:long) %></td>
+				<td><%= message.created_at.advance(:years => message.planet[:distance]).to_formatted_s(:long)  %></td>
 			</tr>
 			<% end %>
 		</tbody>

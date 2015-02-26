@@ -4,7 +4,7 @@
 
 	<%= form_for :message, url: "/messages", method: "post" do |f| %>
 
-		<%= f.hidden_field :planet_id, :value => @planet[:name] %>
+		<%= f.hidden_field :planet_id, :value => @planet[:planet_id] %>
 		<div class="yellowtext">
 
 
