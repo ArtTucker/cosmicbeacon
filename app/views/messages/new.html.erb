@@ -7,7 +7,6 @@
 		<%= f.hidden_field :planet_id, :value => @planet[:planet_id] %>
 		<div class="yellowtext">
 
-
 		From: <%= current_user.username %> <%= f.hidden_field :user_id, :value => current_user.username %> <br>
 	    Target System: <%= @planet[:name] %> <br>
 	    Estimated Delivery: <%= @planet[:distance] %> years <%= f.hidden_field :distance, :value => @planet[:distance] %> <br>

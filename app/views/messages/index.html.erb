@@ -23,7 +23,7 @@
 				<td><%= message.content %></td>
 				<td><%= message.user_id %></td>
 				<td><%= message.created_at.to_formatted_s(:long) %></td>
-				<td><%= message.created_at.advance(:years => message.planet[:distance]).to_formatted_s(:long)  %></td>
+				<td><%= message.created_at.advance(:years => message.planet[:distance]).to_formatted_s(:long) %></td>
 			</tr>
 			<% end %>
 		</tbody>

@@ -16,8 +16,12 @@ class MessagesController < ApplicationController
 	end
 
 	def create
-		new_message = params.require(:message).permit(:content, :user_id, :planet_id)
-		message = Message.create(new_message)		
+		new_message = params.require(:message).permit(:content, :user_id, :planet_id, :delivery)
+		message = Message.create(new_message)
+		# @planet = Planet.find(params[:planet_id])
+
+		# light_hours = 4.403 * 8766
+		# delivery = message.created_at.advance(:hours => light_hours)
 		redirect_to '/messages'
 	end
 
