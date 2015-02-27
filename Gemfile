@@ -30,6 +30,8 @@ gem 'devise'
 
 gem 'httparty'
 
+gem 'rails_12factor'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 
